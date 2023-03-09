@@ -41,9 +41,6 @@ private Integer limit;
 
 #foreach($column in $tableInfo.fullColumn)
 @ApiModelProperty(value = "${column.comment}")
-#if($!{tool.getClsNameByFullName($column.type)} == 'Long')
-@Encrypt
-#end
 private $!{tool.getClsNameByFullName($column.type)} $!{column.name};
 
 #end
